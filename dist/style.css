@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url(./img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Lobster', cursive;
+    overflow: hidden;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left:0 ;
+    width: 100%;
+    height:100vh;
+    background-color: rgba(0,0,0,0.2);
+}
+.scene {
+    width: 300px;
+    height: 460px;
+    perspective: 600px;
+    position: absolute;
+    top:50%;
+    left: 25%;
+    transform: translate(-50%,-50%);
+   
+
+  }
+  .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+
+  .card__face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    box-shadow: 10px 10px 10px black;
+  }
+
+  .card__face--front {
+    background: #3A5A21;
+    border: 2px solid rgb(211, 211, 211);
+    border-radius: 3px;
+  }
+  
+  .card__face--back {
+    background: #CFB53B;
+    transform: rotateY( 180deg );
+    border: 2px solid black;
+    border-radius: 5px;
+  }
+  .card.is-flipped {
+    transform: rotateY(180deg);
+  }
+  .cover {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      
+  }
+  .card__face--front .cover h3 {
+      font-size: 35px;
+      margin-bottom: 20px;
+      color: rgb(211, 211, 211);
+  }
+  .card__face--front .cover p {
+    color: rgb(211, 211, 211);
+  }
+  .card__face--back .cover h1 {
+      font-size:  60px;
+      letter-spacing: 10px;
+      margin-bottom: 30px;
+  }
+  .card__face--back .cover h2 {
+      padding: 20px 0;
+      font-size: 50px;
+  }
+  .card__face--back .cover h3 {
+    padding: 20px 0;
+    font-size: 20px;
+}
+
+#copywrite {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 700px) {
+    .scene {
+        width: 300px;
+        height: 460px;
+        perspective: 600px;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
